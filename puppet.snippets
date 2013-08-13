@@ -4,8 +4,9 @@
 # see it in action @ http://www.devco.net/archives/2009/09/22/vim_and_puppet.php
 
 # Language Constructs
-snippet class
-	class `vim_snippets#Filename()` inherits ${1:`vim_snippets#Filename()`}::params {
+snippet iclass
+	class `vim_snippets#Filename()` () inherits ${1:`vim_snippets#Filename()`}::params {
+
 		anchor {'`vim_snippets#Filename()`::begin':
 			before => Class['`vim_snippets#Filename()`::install']
 		}
@@ -21,6 +22,9 @@ snippet class
 		anchor {'`vim_snippets#Filename()`::end':
 			before => Class['`vim_snippets#Filename()`::service']
 		}
+	}
+snippet class
+	class ${1:name}::`vim_snippets#Filename()` {
 	}
 snippet node
 	node "${1:`vim_snippets#Filename('', 'fqdn')`}" {
@@ -56,6 +60,10 @@ snippet >
 	${1}	=> ${2}
 snippet p:
 	"puppet://puppet/${1:module name}/${2:file name}"
+snippet con
+	content => template("${module_name}/${1:filename}.erb"),
+snippet sor
+	source  => "puppet:///${module_name}/${1:filename}",
 #
 # Functions
 snippet alert
@@ -144,6 +152,7 @@ snippet package
 		ensure	=> ${2:present}
 	}
 
+
 snippet yumrepo
 	yumrepo{ "${1:repo name}":
 		descr	=> "${2:$1}",
@@ -157,13 +166,18 @@ snippet define
 
 snippet service
 	service{ "${1:service}":
-		enable		=> ${2:true},
-		ensure		=> ${3:running},
-		hasstatus	=> true,
+		enable     => ${2:true},
+		ensure     => ${3:running},
+		hasstatus  => true,
+		hasrestart => true,
 	}
 
 snippet file
-	file{ "${1:path}":
-		${2}	=> ${3}
+	file{ "${1:name}":
+		ensure => ${2:present},
+		path   => '${3:path}',
+		owner  => '${4:root}',
+		group  => '${5:root}',
+		mode   => '${6:0664}',
 	}
 
