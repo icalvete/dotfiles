@@ -27,7 +27,7 @@ snippet class
 	class ${1:name}::`vim_snippets#Filename()` {
 	}
 snippet node
-	node "${1:`vim_snippets#Filename('', 'fqdn')`}" {
+	node '${1:`vim_snippets#Filename('', 'fqdn')`}' {
 		${2}
 	}
 snippet case
@@ -83,7 +83,7 @@ snippet extlookup Extlookup with defaults
 snippet extlookup Extlookup with defaults and custom data file
 	extlookup("${1:variable}", "${2:default}", "${3:data source}")${4}
 snippet fail
-	fail("${1:message}")${2}
+	fail('${1:message}')${2}
 snippet info
 	info("${1:message}")${2}
 snippet inline_template
@@ -102,19 +102,23 @@ snippet versioncmp
 	versioncmp("${1:version}", "${2:version}")${3}
 snippet warning
 	warning("${1:message}")${2}
+snippet not
+	notify{'${1:message}')
+snippet notd
+	notify{'--- DEBUG ----')
 #
 # Types
 snippet cron
-	cron{ "${1:name}":
-		command	=> "${2}",
+	cron{ '${1:name}':
+		command	=> '${2}',
 		user	=> "${3:root}",
 		${4}	=> ${5}
 	}
 
 snippet exec
-	exec{ "${1:name}":
+	exec{ '${1:name}':
 		command	=> "${2:$1}",
-		user	=> "${3:root}",
+		user	=> '${3:root}',
 		${4}	=> ${5}
 	}
 
@@ -127,12 +131,12 @@ snippet user
 	}
 
 snippet group
-	group{ "${1:group}":
+	group{ '${1:group}':
 		ensure	=> ${2:present}
 	}
 
 snippet host
-	host{ "${1:hostname}":
+	host{ '${1:hostname}':
 		ip	=> ${2:127.0.0.1}
 	}
 
