@@ -2,13 +2,12 @@
 
 My dotfiles
 
-## vim
-
-### Instalation
+## Instalation
 
 1. cd ~
 2. git clone https://github.com/icalvete/dotfiles.git
 
+## vim
 
 ### Configuration (The first time run):
 
