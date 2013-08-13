@@ -38,9 +38,11 @@ map! <F4> <ESC><F4>i"
 map <F7> :set hls!<CR><Bar>:echo "HLSearch: " . strpart("OffOn", 3 * &hlsearch, 3)<CR>
 map! <F7> <ESC><F7>i"
 
-inoremap <M-o>       <Esc>o
-inoremap <C-j>       <Down>
-
+inoremap <M-o> <Esc>o
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 let g:ragtag_global_maps=1
 let g:syntastic_auto_loc_list=1
