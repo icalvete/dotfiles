@@ -14,6 +14,7 @@ My dotfiles
 1. git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
 2. vim -u ~/dotfiles/bundles.vim +BundleInstall +q
 3. cp -a ~/dotfiles/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
+4. cp -a ~/dotfiles/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
 
 ### After configuration:
 
