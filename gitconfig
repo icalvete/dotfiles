@@ -1,0 +1,15 @@
+[user]
+	name = Israel Calvete
+	email = icalvete@gmail.com
+[color]
+	ui = true
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore
+	[alias]
+        co = checkout
+        br = branch
+        ci = commit
+	st = status
+	last = log -1 HEAD
+	unstage = reset HEAD --									
