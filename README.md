@@ -2,6 +2,17 @@
 
 My dotfiles
 
+#Actions:
+
+* vim config files with my tunning config
+  + [powerline](https://github.com/Lokaltog/powerline)
+  + many language syntax 
+  + many language snippets
+  + many extra power features like aling by =>, = ..., syntax checks...
+
+* git
+  + config and alias
+
 ## Instalation
 
 1. cd ~
@@ -15,7 +26,6 @@ My dotfiles
 2. rm .vim .vimrc (Maybe, you want do a copy instead)
 3. ln -s dotfiles/vim .vim
 4. ln -s dotfiles/vimrc .vimrc
-5. ln -s dotfiles/gitconfig .gitconfig
 
 ### Configuration (The first time run):
 
@@ -23,3 +33,8 @@ My dotfiles
 2. vim -u ~/dotfiles/bundles.vim +BundleInstall +q
 3. cp -a ~/dotfiles/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
 4. cp -a ~/dotfiles/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
+
+## git
+
+1. cd ~
+2. ln -s dotfiles/gitconfig .gitconfig
