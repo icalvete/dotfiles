@@ -11,7 +11,7 @@ snippet iclass
 			before => Class['`vim_snippets#Filename()`::install']
 		}
 		class {'`vim_snippets#Filename()`::install':
-			require => Anchor['`vim_snippets#Filename()`::end']
+			require => Anchor['`vim_snippets#Filename()`::begin']
 		}
 		class {'`vim_snippets#Filename()`::config':
 			require => Class['`vim_snippets#Filename()`::install']
@@ -20,30 +20,36 @@ snippet iclass
 			require => Class['`vim_snippets#Filename()`::config']
 		}
 		anchor {'`vim_snippets#Filename()`::end':
-			before => Class['`vim_snippets#Filename()`::service']
+			require => Class['`vim_snippets#Filename()`::service']
 		}
 	}
 snippet class
+
 	class ${1:name}::`vim_snippets#Filename()` {
 	}
+
 snippet node
 	node '${1:`vim_snippets#Filename('', 'fqdn')`}' {
 		${2}
 	}
+
 snippet case
 	case $${1:variable} {
 		default: { ${2} }
 	}
+
 snippet ife
 	if $${1:variable} {
 		${2}
 	} else {
 		${3}
 	}
+
 snippet if
 	if $${1:variable} {
 		${2}
 	}
+
 snippet el
 	else {
 		${1}
@@ -52,14 +58,17 @@ snippet ?
 	? {
 		'${1}'	=> ${2}
 	  }
+
+
 #
 # blocks etc and general syntax sugar
 snippet [
-	[ ${1} ]${2}
+ [ ${1} ]${2}
+
 snippet >
 	${1}	=> ${2}
 snippet p:
-	"puppet://puppet/${1:module name}/${2:file name}"
+	"puppet://puppet/${1:module_name}/${2:filename}"
 snippet con
 	content => template("${module_name}/${1:filename}.erb"),
 snippet sor
@@ -81,39 +90,47 @@ snippet extlookup Simple extlookup
 snippet extlookup Extlookup with defaults
 	extlookup("${1:variable}", "${2:default}")${3}
 snippet extlookup Extlookup with defaults and custom data file
-	extlookup("${1:variable}", "${2:default}", "${3:data source}")${4}
+	extlookup("${1:vari able}", "${2:default}", "${3:data source}")${4}
 snippet fail
-	fail('${1:message}')${2}
+	fail('${1:message}' )${2}
 snippet info
-	info("${1:message}")${2}
+	info('${1:message}')${2} 
 snippet inline_template
-	inline_template("<%= ${1} %>")${2}
+	inline_template('<%=  ${1} %>')${2}
 snippet notice
-	notice("${1:message}")${2}
+	notice('${1:message}')${2} 
 snippet realize
-	realize(${1:Resource}[${2:name}])${3}
+	realize(${1:Resource}[${2:name}])${3} 
 snippet regsubst
-	regsubst(${1:hay stack}, ${2:needle}, "${3:replacement}")${4}
+	regsubst(${1:hay stack}, ${2:needle}, '${3:replacement}')${4}
+
 snippet inc
-	include ${1:classname}${2}
+	 include ${1:classname}${2}
+
 snippet split
-	split(${1:hay stack}, "${2:patten}")${3}
+	split(${1:hay stack}, '${2:patten}')${3}
+
 snippet versioncmp
-	versioncmp("${1:version}", "${2:version}")${3}
+	versioncmp('${1:version}', '${2:version}')${3}
+
 snippet warning
-	warning("${1:message}")${2}
+	warning('${1:message}')${2}
+
 snippet not
 	notify{'${1:message}':}
+
 snippet notd
-	notify{'--- DEBUG ----':}
+	notify{'--- DEBUG ---':}
+
 #
 # Types
 snippet cron
 	cron{ '${1:name}':
 		command	=> '${2}',
-		user	=> "${3:root}",
+		user	=> '${3:root}',
 		${4}	=> ${5}
 	}
+
 
 snippet exec
 	exec{ '${1:name}':
@@ -122,12 +139,14 @@ snippet exec
 		${4}	=> ${5}
 	}
 
+
+
 snippet user
-	user{ "${1:user}":
-		comment		=> "${2:$1}",
+	user{ '${1:user}':
+		comment		=> '${2:$1}',
 		ensure		=> present,
 		managehome	=> true,
-		home		=> "${3:/home/$1}"
+		home		=> '${3:/home/$1}'
 	}
 
 snippet group
@@ -135,33 +154,39 @@ snippet group
 		ensure	=> ${2:present}
 	}
 
+
 snippet host
 	host{ '${1:hostname}':
 		ip	=> ${2:127.0.0.1}
 	}
 
+
 snippet mailalias
-	mailalias{ "${1:localpart}":
-		recipient	=> "${2:recipient}"
+
+	mailalias{ '${1:localpart}':
+		recipient	=> '${2:recipient}'
 	}
 
 snippet mount
-	mount{ "${1:destination path}":
+	mount{ '${1:destination path}':
 		ensure	=> ${2:mounted},
-		device	=> "${3:device name or path}"
+		device	=> '${3:device name or path}'
 	}
 
+
 snippet package
-	package{ "${1:package name}":
+
+	package{ '${1:package name}':
 		ensure	=> ${2:present}
 	}
 
 
 snippet yumrepo
-	yumrepo{ "${1:repo name}":
-		descr	=> "${2:$1}",
+	yumrepo{ '${1:repo name}':
+		descr	=> '${2:$1}',
 		enabled	=> ${3:1}
 	}
+
 
 snippet define
 	define ${1} (${2}) {
@@ -169,7 +194,7 @@ snippet define
 	}
 
 snippet service
-	service{ "${1:service}":
+	service{ '${1:service}':
 		enable     => ${2:true},
 		ensure     => ${3:running},
 		hasstatus  => true,
@@ -177,7 +202,8 @@ snippet service
 	}
 
 snippet file
-	file{ "${1:name}":
+
+	file{ '${1:name}':
 		ensure => ${2:present},
 		path   => '${3:path}',
 		owner  => '${4:root}',
