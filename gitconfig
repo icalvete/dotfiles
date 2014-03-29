@@ -12,4 +12,6 @@
         ci = commit
 	st = status
 	last = log -1 HEAD
-	unstage = reset HEAD --									
+	unstage = reset HEAD --
+	as = remote update
+	zx = pull origin master
