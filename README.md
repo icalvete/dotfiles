@@ -15,26 +15,34 @@ My dotfiles
 
 ## Instalation
 
-1. cd ~
-2. git clone https://github.com/icalvete/dotfiles.git
+```bash
+ubuntu@yoda:~$ cd ~
+ubuntu@yoda:~$ git clone https://github.com/icalvete/dotfiles.git
+```
 
 ## vim
 
 ### Before configuration:
 
-1. cd ~
-2. rm .vim .vimrc (Maybe, you want do a copy instead)
-3. ln -s dotfiles/vim .vim
-4. ln -s dotfiles/vimrc .vimrc
+```bash
+ubuntu@yoda:~$ cd ~
+ubuntu@yoda:~$ rm .vim .vimrc (Maybe, you want do a copy instead)
+ubuntu@yoda:~$ ln -s dotfiles/vim .vim
+ubuntu@yoda:~$ ln -s dotfiles/vimrc .vimrc
+```
 
 ### Configuration (The first time run):
 
-1. git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
-2. vim -u ~/dotfiles/bundles.vim +BundleInstall +q (¡¡¡ ignore errors !!!)
-3. cp -a ~/dotfiles/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
-4. cp -a ~/dotfiles/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
+```bash
+ubuntu@yoda:~$ git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
+ubuntu@yoda:~$ vim -u ~/dotfiles/bundles.vim +BundleInstall +q (¡¡¡ ignore errors !!!)
+ubuntu@yoda:~$ cp -a ~/dotfiles/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
+ubuntu@yoda:~$ cp -a ~/dotfiles/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
+```
 
 ## git
 
-1. cd ~
-2. ln -s dotfiles/gitconfig .gitconfig
+```bash
+ubuntu@yoda:~$ cd ~
+ubuntu@yoda:~$ ln -s dotfiles/gitconfig .gitconfig
+```
