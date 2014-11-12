@@ -15,3 +15,4 @@
 	unstage = reset HEAD --
 	as = remote update
 	zx = pull origin master
+	qw = submodule update
