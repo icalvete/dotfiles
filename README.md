@@ -31,29 +31,9 @@ ubuntu@yoda:~$ cd ~
 ubuntu@yoda:~$ git clone https://github.com/icalvete/dotfiles.git
 ```
 
-## vim
-
-### Before configuration:
+## Configuration (The first time run):
 
 ```bash
-ubuntu@yoda:~$ cd ~
-ubuntu@yoda:~$ rm .vim .vimrc (Maybe, you want do a copy instead)
-ubuntu@yoda:~$ ln -s dotfiles/vim .vim
-ubuntu@yoda:~$ ln -s dotfiles/vimrc .vimrc
-```
-
-### Configuration (The first time run):
-
-```bash
-ubuntu@yoda:~$ git clone https://github.com/gmarik/vundle.git ~/dotfiles/vim/bundle/vundle
-ubuntu@yoda:~$ vim -u ~/dotfiles/bundles.vim +BundleInstall +q (¡¡¡ ignore errors !!!)
-ubuntu@yoda:~$ cp -a ~/dotfiles/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
-ubuntu@yoda:~$ cp -a ~/dotfiles/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
-```
-
-## git
-
-```bash
-ubuntu@yoda:~$ cd ~
-ubuntu@yoda:~$ ln -s dotfiles/gitconfig .gitconfig
+ubuntu@yoda:~$ cd ~/dotfiles
+ubuntu@yoda:~$ ./install.sh
 ```
