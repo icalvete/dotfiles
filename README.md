@@ -20,6 +20,10 @@ Plugin 'nvie/vim-flake8' needs:
   + flake8
   + pep8
 
+Plugin 'scrooloose/syntastic' needs:
+
+  + puppet-lint
+
 ## Instalation
 
 ```bash
