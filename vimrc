@@ -26,17 +26,17 @@ colorscheme vividchalk
 " Mappings
 :map <C-d> :NERDTreeToggle<CR>
 
+" Highlight on/off
+map <F2> :set hls!<CR><Bar>:echo "HLSearch: " . strpart("OffOn", 3 * &hlsearch, 3)<CR>
+map! <F2> <ESC><F2>i"
+
 " Number lines on/off
-map <F2> :set number!<CR>
-map! <F2> <ESC><F2> i
+map <F3> :set number!<CR>
+map! <F3> <ESC><F3> i
 
 " Make trailing space visible
 map <F4> :set hls<CR>/\s\+$<CR>
 map! <F4> <ESC><F4>i"
-
-" Highlight on/off
-map <F7> :set hls!<CR><Bar>:echo "HLSearch: " . strpart("OffOn", 3 * &hlsearch, 3)<CR>
-map! <F7> <ESC><F7>i"
 
 inoremap <M-o> <Esc>o
 inoremap <C-h> <Left>

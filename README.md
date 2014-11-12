@@ -13,6 +13,13 @@ My dotfiles
 * git
   + config and alias
 
+## Requirements
+
+Plugin 'nvie/vim-flake8' needs:
+
+  + flake8
+  + pep8
+
 ## Instalation
 
 ```bash
