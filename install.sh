@@ -17,6 +17,10 @@ if [ -f ~/.gitconfig ] && [ ! -L ~/.gitconfig ]; then
 	echo "Doing backup of ~/.gitconfig in ~/.gitconfig.${DATE}."
 	mv ~/.gitconfig  ~/.gitconfig_${DATE}
 fi
+if [ -f ~/.gemrc ] && [ ! -L ~/.gemrc ]; then
+	echo "Doing backup of ~/.gitconfig in ~/.gitconfig.${DATE}."
+	mv ~/.gemrc  ~/.gemrc_${DATE}
+fi
 echo
 # END BACKUP
 
@@ -26,6 +30,7 @@ if [ ! -e ~/.vim ]; then
 fi
 ln -f -s dotfiles/vimrc ~/.vimrc
 ln -f -s dotfiles/gitconfig ~/.gitconfig
+ln -f -s dotfiles/gemrc ~/.gemrc
 # END LINKING
 
 echo "Instaling vundle..."
