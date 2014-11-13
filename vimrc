@@ -24,6 +24,9 @@ colorscheme vividchalk
 "colorscheme codeschool
 
 " Mappings
+let mapleader = ","
+nmap <Leader>. <C-w>w
+
 :map <C-d> :NERDTreeToggle<CR>
 
 " Highlight on/off
