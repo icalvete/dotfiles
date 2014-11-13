@@ -14,6 +14,7 @@ set cursorline
 set ruler
 set ai
 set si
+set backspace=indent,eol,start
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 runtime! macros/matchit.vi
