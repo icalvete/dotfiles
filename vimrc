@@ -16,7 +16,7 @@ set ai
 set si
 set backspace=indent,eol,start
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set mouse=a
+"set mouse=a
 
 runtime! macros/matchit.vi
 "colorscheme vibrantink
