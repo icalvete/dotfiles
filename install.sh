@@ -47,6 +47,8 @@ echo
 echo "Write q! after Done!."
 echo 
 sleep 2
+#mkdir -p ~/dotfiles/vim/bundle/vim-snippets/snippets/
+#mkdir -p ~/dotfiles/vim/after/plugin/
 vim  -u ~/dotfiles/bundles.vim +PluginInstall +q!
 echo "Instaled."
 
@@ -54,4 +56,5 @@ echo "Instaling snippets and tools..."
 cp -a ~/dotfiles/files/puppet.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/puppet.snippets
 cp -a ~/dotfiles/files/sh.snippets ~/dotfiles/vim/bundle/vim-snippets/snippets/sh.snippets
 cp -a ~/dotfiles/files/tabular.vim ~/dotfiles/vim/after/plugin/tabular.vim
+cp -a ~/dotfiles/files/tComment.vim ~/dotfiles/vim/after/plugin/tComment.vim
 echo "Instaled."
