@@ -42,5 +42,6 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'vim-scripts/vagrant.vim'
 Bundle 'vim-scripts/nagios-syntax'
 Bundle 'vim-scripts/Specky'
+Bundle 'hashivim/vim-terraform'
 
 filetype plugin indent on     " Required!
