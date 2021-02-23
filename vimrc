@@ -101,3 +101,7 @@ function! InitializeDirectories()
     endfor
 endfunction
 call InitializeDirectories()
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
