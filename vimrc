@@ -17,6 +17,7 @@ set si
 set backspace=indent,eol,start
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 "set mouse=a
+let g:snipMate = { 'snippet_version' : 1 }
 
 runtime! macros/matchit.vi
 "colorscheme vibrantink
